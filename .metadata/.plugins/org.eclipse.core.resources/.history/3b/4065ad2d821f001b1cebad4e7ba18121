@@ -1,0 +1,130 @@
+package baithuchanh4;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JTextField;
+import java.awt.GridLayout;
+import javax.swing.JButton;
+import java.awt.FlowLayout;
+import javax.swing.SwingConstants;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.UIManager;
+import javax.swing.border.LineBorder;
+import java.awt.Color;
+import javax.swing.JScrollBar;
+import javax.swing.JSlider;
+import javax.swing.JToggleButton;
+import javax.swing.JComboBox;
+import javax.swing.JInternalFrame;
+import javax.swing.JProgressBar;
+import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Account extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField textNumber;
+	private JTextField textName;
+	private JTextField textMoney;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Account frame = new Account();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Account() {
+		setTitle("Account");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 675, 589);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(10, 10, 641, 146);
+		contentPane.add(panel);
+		panel.setLayout(new GridLayout(3, 2, 0, 8));
+		
+		JLabel lblAccountNumber = new JLabel("Account Number");
+		lblAccountNumber.setFont(new Font("Trebuchet MS", Font.ITALIC, 17));
+		panel.add(lblAccountNumber);
+		
+		textNumber = new JTextField();
+		panel.add(textNumber);
+		textNumber.setColumns(10);
+		
+		JLabel lblAccountMoney = new JLabel("Account Money");
+		lblAccountMoney.setFont(new Font("Trebuchet MS", Font.ITALIC, 17));
+		panel.add(lblAccountMoney);
+		
+		textMoney = new JTextField();
+		panel.add(textMoney);
+		textMoney.setColumns(10);
+		
+		JLabel lblAccountName = new JLabel("Account Name");
+		lblAccountName.setFont(new Font("Trebuchet MS", Font.ITALIC, 17));
+		panel.add(lblAccountName);
+		
+		textName = new JTextField();
+		panel.add(textName);
+		textName.setColumns(10);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBounds(10, 449, 641, 69);
+		FlowLayout flowLayout = (FlowLayout) panel_2.getLayout();
+		flowLayout.setVgap(8);
+		flowLayout.setHgap(8);
+		contentPane.add(panel_2);
+		
+		JButton btnAdd = new JButton("ADD");
+		btnAdd.setVerticalAlignment(SwingConstants.BOTTOM);
+		btnAdd.setFont(new Font("Sitka Text", Font.ITALIC, 17));
+		panel_2.add(btnAdd);
+		
+		JButton btnDelete = new JButton("DELETE");
+		btnDelete.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textNumber.setText("");
+				textName.setText("");
+				textMoney.setText("");
+			}
+		});
+		btnDelete.setVerticalAlignment(SwingConstants.BOTTOM);
+		btnDelete.setFont(new Font("Sitka Text", Font.PLAIN, 17));
+		panel_2.add(btnDelete);
+		
+		JButton btnExit = new JButton("EXIT");
+		btnExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+//				System.exit(0);
+				JOpane.
+			}
+		});
+		btnExit.setVerticalAlignment(SwingConstants.BOTTOM);
+		btnExit.setFont(new Font("Sitka Text", Font.PLAIN, 17));
+		panel_2.add(btnExit);
+	}
+}

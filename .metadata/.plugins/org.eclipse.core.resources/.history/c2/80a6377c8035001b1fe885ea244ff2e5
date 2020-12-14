@@ -1,0 +1,38 @@
+package QUANLY;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JOptionPane;
+
+public class khachhang_list {
+	public static List<danhsach_kh> findAll() {
+		List<danhsach_kh> khachhang = new ArrayList<>();
+		Connection conn = null;
+		Statement statement = null;
+		ResultSet result = null;
+		try {
+			String dbURL = "jdbc:sqlserver://localhost;databaseName=QLCHDT_STT;user=SA;password=nhatthinh190161";
+			conn = DriverManager.getConnection(dbURL);
+			String sql = "select * from KHACHHANG";
+			statement = conn.createStatement();
+			result = statement.executeQuery(sql);
+			while (result.next()) {// trung voi ten cot trong csdl
+				danhsach_kh khach = new danhsach_kh();
+				khachhang.add(khach);
+			}
+			result.close();
+			statement.close();
+			conn.close();
+
+		} catch (SQLException ex) {
+			JOptionPane.showMessageDialog(null, ex.getMessage());
+		}
+		return khachhang;
+	}
+}

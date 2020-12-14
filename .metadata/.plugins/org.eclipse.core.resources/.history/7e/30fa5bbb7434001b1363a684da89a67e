@@ -1,0 +1,13 @@
+package QUANLY;
+
+import java.sql.Date;
+
+public class dskhachhang {
+	private String ma_kh;
+	private String ten_kh;
+	private Date ngaysinh;
+	private String gioitinh;
+	private String diachi;
+	private String sdt_kh;
+	
+}

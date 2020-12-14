@@ -1,0 +1,14 @@
+package QUANLY;
+
+import javax.swing.JPanel;
+
+public class KhachHang extends JPanel {
+
+	/**
+	 * Create the panel.
+	 */
+	public khachhangform() {
+
+	}
+
+}
